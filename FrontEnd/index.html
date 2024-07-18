@@ -8,25 +8,35 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Work+Sans&display=swap" rel="stylesheet">
 	<meta name="description" content="">
+
+	<!-- librairie pour ajouter des icones -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+    integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+    crossorigin="anonymous" referrerpolicy="no-referrer">
+	<!-- style page d'index-->
 	<link rel="stylesheet" href="./assets/style.css">
 	<!-- ajouter le lien de scriptjs -->
 	<script src="./script/script.js" defer></script>
-
-
 </head>
+
+
 <body>
+	
 <header>
 	<h1>Sophie Bluel <span>Architecte d'intérieur</span></h1>
 	<nav>
 		<ul>
-			<li>projets</li>
-			<li>contact</li>
-			<li>login</li>
-			<li><img src="./assets/icons/instagram.png" alt="Instagram"></li>
+			<li><a href="#portfolio">projets</a></li>
+			<li><a href="#contact">contact</a></li>
+			<li><a href="login.html">login</a></li>
+			<li><img src="./assets/icons/instagram.png" alt="Instagram" id="logo-insta"></li> 
+			<!-- Add id pour changer les dimensions de logo insta comme la maquette-->
 		</ul>
 	</nav>
 </header>
+
 <main>
+
 	<section id="introduction">
 		<figure>
 			<img src="./assets/images/sophie-bluel.png" alt="">
@@ -38,9 +48,25 @@
 			<p>En cas de besoin, une équipe pluridisciplinaire peut-être constituée : architecte DPLG, décorateur(trice)</p>
 		</article>
 	</section>
+
+
+	<!-- où le JS ajoutera le contenu dynamique pour gallery & filters-->
 	<section id="portfolio">
+
+		<div class="portfolio_title">
 		<h2>Mes Projets</h2>
-		<!-- <div class="filtres"></div> -->
+		</div>
+
+		<div class="filters"></div>
+
+		<div class="gallery"></div>
+
+	</section>
+	
+	<!-- supprimer le code HTML statique qui représente les travaux de l'architecte  -->
+
+	<!-- <section id="portfolio">
+		<h2>Mes Projets</h2>
 		<div class="gallery">
 			<figure>
 				<img src="assets/images/abajour-tahina.png" alt="Abajour Tahina">
@@ -87,7 +113,8 @@
 				<figcaption>Hotel First Arte - New Delhi</figcaption>
 			</figure>
 		</div>
-	</section>
+	</section> -->
+
 	<section id="contact">
 		<h2>Contact</h2>
 		<p>Vous avez un projet ? Discutons-en !</p>
