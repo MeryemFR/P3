@@ -307,3 +307,177 @@ async function deleteWork(id) {
   eventDeleteIcon()       //appel fonction click suppression
 }
 
+
+//*** Event click Suppression Work
+function eventDeleteIcon() {
+  const deleteIcon = document.querySelectorAll('.fa-trash-can')
+  //click 
+  deleteIcon.forEach(deleteIcon => {
+    deleteIcon.addEventListener('click', function() {
+      //confirmation
+      if (confirm('Are you sure you want to delete this work ?')) {
+        deleteWork(deleteIcon.id)
+      }
+      })  
+  })
+}
+
+
+
+//*** Event click Modifier Work
+function eventModifier() { 
+    //si login est connecté
+      if (localStorage.getItem('token')) {
+        const modifier = document.querySelector('.edit')
+        //click
+        modifier.addEventListener('click', function () {
+          //appel fonction creation modale
+          createModal(modifier)
+        })
+      }
+}
+
+//*** Event click Mode edition = modifier work
+function eventModeEdition() { 
+    //si login est connecté
+      if (localStorage.getItem('token')) {
+        const modeEdition = document.querySelector('.mode_edition')
+        //click
+        modeEdition.addEventListener('click', function () {
+          //appel fonction creation modale
+          createModal(modeEdition)
+        })
+      }
+}
+
+
+//*** Event boutton ajouter une photo
+function eventAddPhoto() { 
+    
+  //recup les elements de la modale existante et btn ajout
+  const modalContent1 = document.querySelector('.modal_content_1')
+  const div_close_back = document.querySelector('.div_close_back')
+  const btnAdd = document.querySelector('.btn_add')
+  const modalTitle = document.querySelector('h3')
+  const galleryModal = document.querySelector('.gallery_modal')
+
+  //click -> ouvert la modale 2 d'ajout
+  btnAdd.addEventListener('click', function () {
+
+      // Créer icône back
+      const backBtn = document.createElement('i')
+      backBtn.classList.add('fa-solid', 'fa-arrow-left')
+      backBtn.setAttribute('id', 'back_btn')
+      div_close_back.insertAdjacentElement('afterbegin', backBtn)
+      eventBack() //appel fonction pour retourner à la modale précédente
+
+      // Changer titre modal
+      modalTitle.textContent = 'Ajout photo'
+
+      // Cachez le conteneur gallery de modale existant
+      galleryModal.style.display = 'none'
+
+      // Cacher bouton ajouter une photo
+      btnAdd.style.display = 'none'
+
+      // Créer uploader image
+      const uploaderImg = document.createElement('div')
+      uploaderImg.classList.add('uploader_img')
+      modalContent1.appendChild(uploaderImg)
+
+      // Créer icon file
+      const fileIcon = document.createElement("i")
+      fileIcon.classList.add("fa-regular", "fa-image")
+      uploaderImg.appendChild(fileIcon)
+
+      // Créer label ajouter photo
+      const fileLabel = document.createElement("label")
+      fileLabel.textContent = "+ Ajouter photo"
+      fileLabel.classList.add("file_label")
+      fileLabel.setAttribute("for", "file")
+      uploaderImg.appendChild(fileLabel)
+
+      // Créer file input
+      const fileInput = document.createElement("input")
+      fileInput.type = "file"
+      fileInput.id = "file"
+      fileInput.name = "images" 
+      fileInput.setAttribute("accept", ".jpg, .jpeg, .png")
+      fileInput.addEventListener("change", function () {
+        eventValider()
+        })
+      uploaderImg.appendChild(fileInput)
+
+      // Créer image preview
+      const imagePreview = document.createElement("img")
+      imagePreview.className = "image_preview"
+      imagePreview.setAttribute("src", "#")
+      imagePreview.setAttribute("alt", "Aperçu de l'image") 
+      uploaderImg.appendChild(imagePreview)
+
+      // appel fonction charger image
+      eventLoadImg() 
+    
+      // Créer file max Size 
+      const fileMaxSize = document.createElement("p")
+      fileMaxSize.classList.add("max_size")
+      fileMaxSize.textContent = "Jpg, png: 4Mo max"
+      uploaderImg.appendChild(fileMaxSize) 
+      
+      // Créer formulaire
+      const form = document.createElement("form")
+      form.id = "form"
+      form.classList.add("form_modal")
+      modalContent1.appendChild(form)
+
+      // Créer titre
+      const titleLabel = document.createElement("p")
+      titleLabel.classList.add("form_label")
+      titleLabel.textContent = "Titre"
+      form.appendChild(titleLabel)
+      
+      // Créer input titre
+      const titleInput = document.createElement("input")
+      titleInput.type = "text"
+      titleInput.id = "title_input"
+      titleInput.name = "title"
+      titleInput.setAttribute("required", "required")
+      titleInput.addEventListener("change", function () {
+        eventValider()
+        })
+      form.appendChild(titleInput)
+
+      // Créer champs catégorie
+      const categoryLabel = document.createElement("p")
+      categoryLabel.classList.add("form_label")
+      categoryLabel.textContent = "Catégorie"
+      form.appendChild(categoryLabel)
+
+      const categorySelect = document.createElement("select")
+      categorySelect.id = "category_select"
+      categorySelect.name = "category"
+      categorySelect.setAttribute("required", "required")
+      categorySelect.addEventListener("change", function () {
+        eventValider()
+        })
+      //remplir une option par défaut sans valeur 
+      const defaultOption = document.createElement("option")
+      defaultOption.value = ""
+      defaultOption.textContent = "Choisissez une catégorie"
+      categorySelect.appendChild(defaultOption)
+      //remplir select avec les catégories
+      for (let i = 0; i < categories.length; i++) {
+          const option = document.createElement("option")
+          option.value = categories[i].id  
+          option.textContent = categories[i].name
+          categorySelect.appendChild(option)
+      }
+      form.appendChild(categorySelect)
+
+      // Créer bouton valider
+      const btnValider = document.createElement("button")
+      btnValider.classList.add("btn_valider")
+      btnValider.textContent = "Valider"
+      modalContent1.appendChild(btnValider)
+  })
+}
