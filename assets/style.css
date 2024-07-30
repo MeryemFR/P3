@@ -458,3 +458,28 @@ footer nav ul {
 	flex-direction: column;
 	align-items: center;
 }
+
+/* div fermeture et retour */
+.div_close_back {
+	display: flex;
+	justify-content: space-between;
+	width: 100%;
+}
+
+/* icone fermeture */
+.modal_content_1 .fa-xmark {
+	margin-left: auto; 	/* Pousse l'icône vers la droite */
+	font-size: 24px;
+	cursor: pointer;
+}
+
+/* titre modale */
+.modal_content_1 h3 {
+	display: flex;
+	justify-content: center;
+	text-align: center;
+	font-size: 26px;
+	margin: 20px;
+	color: black;
+	font-family: work sans;
+}
