@@ -72,3 +72,13 @@ function login() {
         })
     })
 }
+
+
+
+
+//**** Initialisation
+document.addEventListener('DOMContentLoaded', () => {
+    initializeValidation()
+    login()
+})
+
