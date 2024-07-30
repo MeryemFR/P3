@@ -134,3 +134,57 @@ function logout() {
   localStorage.removeItem('token')
 }
 
+
+//*** Mode admin 
+function isAdmin() {
+  // si login est connecter
+  if (localStorage.getItem('token')) {
+    //Modifier login -> logout
+    const loginLink = document.querySelector('nav ul li:nth-child(3) a')
+    loginLink.textContent = 'logout'
+    //Cacher menu de filtre
+    const filters = document.querySelector('.filters')
+    filters.style.display = "none"
+    //clique sur logout pour se deconnecter
+    loginLink.addEventListener('click', function () {
+      logout() 
+    })
+    //modifier mes projets
+    const mesProjets = document.querySelector('.portfolio_title')    //conteneur où lien et icone seront ajoutés
+    
+    const modifierIcon = document.createElement('i')                 //ajout de l'icone modifier mes projets
+    modifierIcon.classList.add('fa-regular', 'fa-pen-to-square')      
+    
+    const modifier = document.createElement('a')                     //ajout lien pour modifier
+    modifier.textContent = 'modifier'
+    modifier.href = '#'
+    modifier.classList.add('edit')
+
+    mesProjets.appendChild(modifierIcon)                             //mettre i et a dans le conteneur portfolio_title
+    mesProjets.appendChild(modifier)
+    
+
+    //mode edition
+    const body = document.querySelector('body')                      //recup body pour ajouter div 
+    
+    const modeEdition = document.createElement('div')                //creation div
+    modeEdition.classList.add('mode_edition')
+        
+    const modeEditionIcon = document.createElement('i')              //ajout icone mode edition
+    modeEditionIcon.classList.add('fa-regular', 'fa-pen-to-square')
+       
+    const modeEditionTxt = document.createElement('a')               //ajout txt mode edition
+    modeEditionTxt.textContent = 'Mode édition'
+    modeEditionTxt.href = '#';
+    modeEditionTxt.classList.add('txt_edition')
+
+
+    modeEdition.appendChild(modeEditionIcon)                         //ajout txt et i dans la div
+    modeEdition.appendChild(modeEditionTxt)                    
+    body.insertBefore(modeEdition, body.firstChild)                  //ajout div dans le body
+    
+    }
+      else {
+        console.log("pas connecté")
+      }
+}
