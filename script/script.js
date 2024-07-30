@@ -188,3 +188,69 @@ function isAdmin() {
         console.log("pas connecté")
       }
 }
+
+//*** creation Modale pour modifier les projets
+function createModal(update) {
+
+  //créer modal
+  const modal = document.createElement('aside')
+  modal.classList.add('modal')
+
+  //insert modal apres click sur update work pour eviter recreation de la modale
+  update.insertAdjacentElement('afterend', modal)
+
+  const modalContent1 = document.createElement('div')
+  modalContent1.classList.add('modal_content_1')
+  modal.appendChild(modalContent1);
+
+  const divCloseBack = document.createElement('div')
+  divCloseBack.classList.add('div_close_back')
+  modalContent1.appendChild(divCloseBack)
+
+  const btnClose = document.createElement('i')
+  btnClose.classList.add('fa-solid', 'fa-xmark')
+  divCloseBack.appendChild(btnClose)
+
+  const modalTitle = document.createElement('h3')
+  modalTitle.textContent = 'Galerie photo'
+  modalContent1.appendChild(modalTitle)
+
+   const galleryModal = document.createElement('div')
+   galleryModal.classList.add('gallery_modal')
+   modalContent1.appendChild(galleryModal)
+
+  addImgModal(galleryModal) //appel fonction add images
+  eventDeleteIcon()         //appel fonction suppression
+
+  const btnAdd = document.createElement('button')
+  btnAdd.textContent = 'Ajouter une photo'
+  btnAdd.classList.add('btn_add')
+  modalContent1.appendChild(btnAdd)
+  //appel fonction ajouter une photo
+  eventAddPhoto()
+
+  //ouverture
+  openModal(modal)
+  //fermeture par icone
+  btnClose.addEventListener('click', function() { closeModal(modal) })
+  //fermeture en dehors de la modale
+  window.onclick = function(event) {
+    if (event.target === modal) {
+      closeModal(modal)
+    }
+  }
+}
+
+
+//*** Ouverture de la modale
+function openModal(modal) { modal.style.display = 'block' }
+
+//*** Fermeture de la modale
+async function closeModal(modal) {
+  modal.style.display = 'none'
+
+      let gallery = document.querySelector('.gallery')  
+      gallery.innerHTML = ''    //vider gallery
+      await getWorks()          //recharger works
+      showAllWorks()            //afficher works
+}
