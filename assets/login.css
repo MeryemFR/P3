@@ -106,7 +106,7 @@ label {
     color: #3D3D3D;
 }
 
-#email-bar , #password-bar {
+#email , #password {
     width: 379px;
     height: 51px;
     background: #FFFFFF;

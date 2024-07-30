@@ -323,19 +323,58 @@ a:hover {
 	margin-bottom: 1em;
 }
 
+/* modifier mes projets - aligner horizontalement */
+.portfolio_title {
+	display: flex;
+	justify-content: center;
+	margin-top: 100px;
+}
+
+/* modifier - lien */
+.edit{
+	color: black;
+	font-size: 16px;
+	height: 30px;
+	text-decoration: none;
+	margin-left: 10px;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+}
+
+
+/* modifier - icone */
+.portfolio_title .fa-regular , .fa-pen-to-square {
+	color: black;
+	font-size: 16px;
+	height: 30px;
+	margin-left: 40px;
+	display: flex;
+    align-items: center;
+}
+
 .gallery {
 	width: 100%;
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr;
 	grid-column-gap: 20px;
 	grid-row-gap: 20px;
+	margin-top: 40px;
 }
 
 .gallery img {
 	width: 100%;
+	height: 500px;
+    object-fit: cover;
+
 
 }
+/* titre sous l'image  */
+.gallery figcaption {
+	margin-top: 10px;
+}
 
+/***** Partie Contact *****/
 #contact {
 	width: 50%;
 	margin: auto;
