@@ -105,3 +105,32 @@ for(let i = 0; i < listWorks.length; i++) {
     creationFigureGallery(listWorks[i],gallery)
 }
 } 
+
+
+//*** Filtrage de gallery par catégories pendant click
+function filterByCatg(categorieSelectionne) {
+  let gallery = document.querySelector('.gallery')  
+  gallery.innerHTML = ''
+
+  //si on clique sur le btn tous sinn autres catégories
+  if (categorieSelectionne == "Tous") {
+    showAllWorks()
+  }
+  else {
+    // filtrer tout les works par catégories
+    for (let i = 0; i < listWorks.length; i++) {
+      if (listWorks[i].category.name == categorieSelectionne) {
+             creationFigureGallery(listWorks[i],gallery)
+
+      }
+    }
+  }
+}
+
+
+
+//*** Se déconnecter
+function logout() {
+  localStorage.removeItem('token')
+}
+
