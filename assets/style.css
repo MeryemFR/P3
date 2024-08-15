@@ -331,7 +331,7 @@ a:hover {
 }
 
 /* modifier - lien */
-.edit{
+.edit {
 	color: black;
 	font-size: 16px;
 	height: 30px;
@@ -344,13 +344,14 @@ a:hover {
 
 
 /* modifier - icone */
-.portfolio_title .fa-regular , .fa-pen-to-square {
+.portfolio_title .fa-regular,
+.fa-pen-to-square {
 	color: black;
 	font-size: 16px;
 	height: 30px;
 	margin-left: 40px;
 	display: flex;
-    align-items: center;
+	align-items: center;
 }
 
 .gallery {
@@ -365,10 +366,11 @@ a:hover {
 .gallery img {
 	width: 100%;
 	height: 500px;
-    object-fit: cover;
+	object-fit: cover;
 
 
 }
+
 /* titre sous l'image  */
 .gallery figcaption {
 	margin-top: 10px;
@@ -442,7 +444,8 @@ footer nav ul {
 	height: 100%;
 	overflow: auto;
 	background-color: rgba(0, 0, 0, 0.5);
-	overflow-y: hidden; /* masquer le double scroll vertical */
+	overflow-y: hidden;
+	/* masquer le double scroll vertical */
 }
 
 /* contenu de la modale */
@@ -451,8 +454,8 @@ footer nav ul {
 	margin: 4% auto;
 	padding: 20px;
 	border: 1px solid #888;
-	max-width: 34%; 
-	height: 77%;    
+	max-width: 34%;
+	height: 77%;
 	border-radius: 10px;
 	display: flex;
 	flex-direction: column;
@@ -468,7 +471,8 @@ footer nav ul {
 
 /* icone fermeture */
 .modal_content_1 .fa-xmark {
-	margin-left: auto; 	/* Pousse l'icône vers la droite */
+	margin-left: auto;
+	/* Pousse l'icône vers la droite */
 	font-size: 24px;
 	cursor: pointer;
 }
@@ -487,15 +491,18 @@ footer nav ul {
 /* conteneur gallery modal 1 */
 .gallery_modal {
 	display: flex;
-    flex-wrap: wrap;
-	justify-content: flex-start; /* mettre les img à gauche*/
+	flex-wrap: wrap;
+	justify-content: flex-start;
+	/* mettre les img à gauche*/
 	text-align: center;
-    border-bottom: 1px solid #B3B3B3;
-    padding-bottom: 30px;
+	border-bottom: 1px solid #B3B3B3;
+	padding-bottom: 30px;
 	margin-left: 40px;
 	margin-right: 40px;
-	height: 336px;	  /* fixer hauteur */
-    overflow-x: auto; /* scroll horizontale sur le conteneur des img de la modale pour ne pas la dépasser */
+	height: 336px;
+	/* fixer hauteur */
+	overflow-x: auto;
+	/* scroll horizontale sur le conteneur des img de la modale pour ne pas la dépasser */
 }
 
 
@@ -504,15 +511,228 @@ footer nav ul {
 	margin: 5px;
 	width: 100%;
 	height: 102px;
-    object-fit: cover;
+	object-fit: cover;
 }
 
 
 /* box image modal 1 */
 .img_modal_box {
-    position: relative;
-    display: inline-block;
-    margin: 5px;
+	position: relative;
+	display: inline-block;
+	margin: 5px;
 	width: 76px;
 	height: 102px;
 }
+
+/* icone supression */
+.img_modal_box i {
+	position: absolute;
+	/* Retire l'élément du flux normal pour le positionner en haut de la page sans perturber le reste du contenu */
+	top: 10px;
+	right: 0px;
+	background-color: black;
+	border-radius: 3px;
+	padding: 5px;
+	font-size: 9px;
+	color: white;
+	cursor: pointer;
+}
+
+.img_modal_box i:hover {
+	color: red;
+	background-color: white;
+}
+
+
+/* bouton ajout */
+.btn_add {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-family: syne;
+	font-size: 14px;
+	font-weight: 700;
+	color: white;
+	height: 36px;
+	width: 237px;
+	background-color: #1D6154;
+	border: 1px solid #1D6154;
+	border-radius: 60px;
+	cursor: pointer;
+	margin-top: 30px;
+}
+
+
+/***** modale 2 *****/
+/* icone retour */
+.modal_content_1 .fa-arrow-left {
+	font-size: 24px;
+	cursor: pointer;
+}
+
+/* div uploader image */
+.uploader_img {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	font-family: work sans;
+	background-color: #E8F1F6;
+	border-radius: 3px;
+	margin-left: 60px;
+	margin-right: 60px;
+	height: 169px;
+	width: -webkit-fill-available;
+	min-width: fit-content;
+	gap: 5px;
+}
+
+/* icone file */
+.uploader_img .fa-image {
+	font-size: 76px;
+	color: #CBD6D9;
+	margin: 0px;
+	padding: 30px;
+}
+
+/* label ajouter photo */
+.uploader_img label {
+	font-size: 14px;
+	font-weight: 500;
+	color: #306685;
+	cursor: pointer;
+
+	border: 1px solid #CBD6DC;
+	background-color: #CBD6DC;
+	border-radius: 50px;
+	padding: 10px;
+
+	width: 173px;
+	text-align: center;
+
+}
+
+/* input file */
+.uploader_img input {
+	display: none;
+	color: #CBD6DC;
+}
+
+/* preview image */
+.image_preview {
+	display: none;
+	object-fit: cover;
+	/* Pour couper l'image si elle est trop grande */
+	height: 169px;
+	width: 129px;
+}
+
+
+
+/* max size txt */
+.max_size {
+	font-size: 10px;
+	font-weight: 400;
+	color: black;
+}
+
+/* formulaire modale 2 */
+.form_modal {
+	display: flex;
+	justify-content: flex-start;
+	flex-direction: column;
+	width: -webkit-fill-available;
+	margin-left: 60px;
+	margin-right: 60px;
+	border-bottom: 1px solid #B3B3B3;
+	padding-bottom: 30px;
+	margin-top: 20px;
+}
+
+
+/* label titre */
+.form_label {
+	display: flex;
+	justify-content: flex-start;
+	font-family: work sans;
+	font-size: 14px;
+	font-weight: 500;
+	color: black;
+	width: -webkit-fill-available;
+}
+
+/* input de titre */
+#title_input {
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	font-family: work sans;
+	font-size: 14px;
+	font-weight: 400;
+	color: black;
+	height: 51px;
+	width: -webkit-fill-available;
+	border: none;
+	box-shadow: 0px 4px 15px 0px #00000017;
+	margin-bottom: 20px;
+	padding-left: 20px;
+	text-align: left;
+}
+
+
+/* selection category */
+#category_select {
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	font-family: work sans;
+	font-size: 14px;
+	font-weight: 400;
+	color: black;
+	height: 51px;
+	width: -webkit-fill-available;
+	border: none;
+	box-shadow: 0px 4px 15px 0px #00000017;
+	padding-left: 20px;
+	text-align: left;
+}
+
+
+/* bouton valider */
+.btn_valider {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-family: syne;
+	font-size: 14px;
+	font-weight: 700;
+	color: white;
+	height: 36px;
+	width: 237px;
+	background-color: #A7A7A7;
+	border: 1px solid #A7A7A7;
+	border-radius: 60px;
+	cursor: pointer;
+	margin-top: 30px;
+}
+
+.message_ajout {
+	position: fixed;
+	top: 40%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background-color: #4CAF50;
+	color: white;
+	padding: 15px;
+	border-radius: 5px;
+	text-align: center;
+	z-index: 1000;
+	/* Assurez-vous que le message est au-dessus des autres éléments */
+	max-width: 80%;
+	/* Limite la largeur du message */
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+	/* Ajoute une ombre légère */
+}
+
+/* la page de présentation des travaux de l'architecte (à partir du HTML fourni) ;
+la page de connexion de l'administrateur du site (le client) (code à créer de zéro) ;
+la modale permettant d'uploader de nouveaux médias (code à créer from scratch). */
