@@ -41,8 +41,8 @@ function login() {
     form.addEventListener('submit', (event) => {      
         event.preventDefault()
         //récup valeur saisies dans email et password
-        const email = document.getElementById("email-bar").value
-        const password = document.getElementById("password-bar").value
+        const email = document.getElementById("email").value
+        const password = document.getElementById("password").value
 
         //appel de l'API de login
         fetch('http://localhost:5678/api/users/login', {
