@@ -5,7 +5,7 @@ function checkEmail() {
     const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 
     if (!regex.test(email)) {
-        alert("Please enter a valid email address")
+        alert("Veuillez entrer une adresse-email valide")
     }
 }
 
@@ -17,7 +17,7 @@ function checkPassword() {
     const regex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{4,}$/
 
     if (!regex.test(password)) {
-        alert("Please enter a valid password")
+        alert("Veuillez entrer un mot de passe valide")
     }
 }
 
@@ -62,7 +62,7 @@ function login() {
                         // Créer msg d'erreur si aucun n'existe
                         const errorMsg = document.createElement('div')
                         errorMsg.classList.add('error-msg')
-                        errorMsg.textContent = "Please check your email and password"
+                        errorMsg.textContent = "Veuillez renseigner un email et un mot de passe valide"
                         form.appendChild(errorMsg)
                 
                         //css pour le message d'erreur
