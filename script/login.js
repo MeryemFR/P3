@@ -1,35 +1,3 @@
-//**** Vérification du mail
-function checkEmail() {
-    // récup valeur email
-    const email = this.value
-    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
-
-    if (!regex.test(email)) {
-        alert("Please enter a valid email address")
-    }
-}
-
-//**** Vérification du mot de passe
-function checkPassword() {
-    // récup valeur passwords
-    const password = this.value
-    const regex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{4,}$/
-
-    if (!regex.test(password)) {
-        alert("Please enter a valid password")
-    }
-}
-
-
-//**** initialiser les validations
-function initializeValidation() {
-    const emailInput = document.getElementById("email")
-    const passwordInput = document.getElementById("password")
-
-    emailInput.addEventListener('change', checkEmail)
-    passwordInput.addEventListener('change', checkPassword)
-}
-
 //**** Récupération API de login et sauvegarde du Token et puis rediriger vers Index **** Bouton se connecter
 function login() {
 
@@ -60,11 +28,8 @@ function login() {
                         // Créer msg d'erreur si aucun n'existe
                         const errorMsg = document.createElement('div')
                         errorMsg.classList.add('error-msg')
-                        errorMsg.textContent = "Please check your email and password"
+                        errorMsg.textContent = "Veuillez entrer un email et mot de passe valides"
                         form.appendChild(errorMsg)
-
-                        //css pour le message d'erreur
-                        errorMsg.style.cssText = 'color: red; font-size: 16px; align-self: center; margin-bottom: 10px;'
                     }
                 }
             })
@@ -74,6 +39,5 @@ function login() {
 
 //**** Initialisation
 document.addEventListener('DOMContentLoaded', () => {
-    initializeValidation()
     login()
 })

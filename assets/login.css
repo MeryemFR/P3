@@ -1,7 +1,7 @@
 body {
-    max-width: 1440px; 
+    max-width: 1440px;
     min-height: 650px;
-	line-height: 1;
+    line-height: 1;
     font-family: 'Work Sans';
     font-size: 14px;
     margin-left: 150px;
@@ -10,13 +10,14 @@ body {
     flex-direction: column;
     background: #FFFEF8;
 
-    
+
 }
 
 main {
     width: 1140px;
-    display: flex; 
-    flex-direction: column; justify-content: space-between;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     align-items: center;
     align-self: center;
 }
@@ -26,61 +27,63 @@ main {
 
 /******* Header ******/
 header {
-	display: flex; justify-content: space-between;
-    margin: 50px 0 100px;  
+    display: flex;
+    justify-content: space-between;
+    margin: 50px 0 100px;
 
 }
 
-h1{
-	display: flex; flex-direction: column;
-	font-family: 'Syne';
-	font-size: 22px;
-	font-weight: 800;
-	color: #B1663C
+h1 {
+    display: flex;
+    flex-direction: column;
+    font-family: 'Syne';
+    font-size: 22px;
+    font-weight: 800;
+    color: #B1663C
 }
 
-h1 > span {
-	font-family: 'Work Sans';
-	font-size:10px;
-	letter-spacing: 0.1em;
+h1>span {
+    font-family: 'Work Sans';
+    font-size: 10px;
+    letter-spacing: 0.1em;
 }
 
 nav ul {
-	display: flex;
-	align-items: center;
-	list-style-type: none;
+    display: flex;
+    align-items: center;
+    list-style-type: none;
 
 }
 
 nav li {
-	padding: 0 10px;
-	font-size: 1.2em;
+    padding: 0 10px;
+    font-size: 1.2em;
     cursor: pointer;
     /* curseur de la souris en forme de main qui sera affiché au survol */
 }
 
 
 li:hover {
-	color: #B1663C; 
+    color: #B1663C;
     /* couleur du login de nav au survol */
 }
 
 a {
-    align-self: center; 
+    align-self: center;
     color: #3D3D3D;
-    text-decoration: none; 
+    text-decoration: none;
     /* sans décoration */
-} 
+}
 
 
 a:hover {
-	color: #B1663C;
+    color: #B1663C;
     /* couleur du nav et mot de passe oublié au survol*/
 }
 
 #logo-insta {
-	width: 20px;
-	height: 20px;
+    width: 20px;
+    height: 20px;
 }
 
 
@@ -88,25 +91,27 @@ a:hover {
 
 /****** Conteneur de login *******/
 .login {
-    display: flex; flex-direction: column;
-    margin: auto; 
-    
-} 
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+
+}
 
 h2 {
-	font-family: 'Syne';
-	font-weight: 700;
-	font-size: 30px;
-	color: #1D6154;
+    font-family: 'Syne';
+    font-weight: 700;
+    font-size: 30px;
+    color: #1D6154;
     margin-bottom: 50px;
-    align-self: center; 
+    align-self: center;
 }
 
 label {
     color: #3D3D3D;
 }
 
-#email , #password {
+#email,
+#password {
     width: 379px;
     height: 51px;
     background: #FFFFFF;
@@ -114,10 +119,10 @@ label {
     box-shadow: 0px 4px 14px 0px #00000017;
     margin-top: 10px;
     margin-bottom: 20px;
-  }
+}
 
 /* Bouton se connecter */
-  input[type="submit"] {
+input[type="submit"] {
     width: 180px;
     height: 36px;
     font-family: 'Syne';
@@ -131,16 +136,23 @@ label {
     cursor: pointer;
 }
 
+/* Message erreur */
+.error-msg {
+    color: red;
+    font-size: 16px;
+    align-self: center;
+    margin-bottom: 10px;
+}
+
 /* mot de passe oublie */
 #forgot-password:hover {
-    text-decoration: underline;       
+    text-decoration: underline;
     /* txt sera souligné au survol */
 }
 
-
-
 /****** footer ******/
 footer nav ul {
-	display: flex; justify-content: flex-end;
+    display: flex;
+    justify-content: flex-end;
     margin-top: 100px;
 }

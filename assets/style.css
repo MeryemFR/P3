@@ -142,7 +142,7 @@ body {
 	font-size: 14px;
 	overflow-x: hidden;
 	/* Scroll Horizontale , Pour masquer le débordement horizontal du contenu */
-	margin-top: 100px;
+	margin-top:75px;
 	/* Pour ne pas coller au haut avec mode_edition */
 }
 
